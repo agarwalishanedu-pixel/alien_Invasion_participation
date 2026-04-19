@@ -19,6 +19,7 @@ class Settings:
         #Bullet image
         self.bullet_file = Path.cwd() / 'Assets' / 'images' / 'laserBlast.png'
         self.laser_sound = Path.cwd() / 'Assets' / 'sound' / 'laser.mp3'
+        self.impact_sound = Path.cwd() / 'Assets' / 'sound' / 'impactSound.mp3'
         self.bullet_speed = 7
         self.bullet_w = 25
         self.bullet_h = 80
@@ -28,6 +29,6 @@ class Settings:
         self.alien_file = Path.cwd() / 'Assets' / 'images' / 'enemy_4.png'
         self.alien_w = 40
         self.alien_h = 40
-        self.fleet_speed = 2
+        self.fleet_speed = 4
         self.fleet_direction = 1
-        self.fleet_drop_speed = 10
+        self.fleet_drop_speed = 15
