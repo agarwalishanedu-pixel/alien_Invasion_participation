@@ -69,7 +69,7 @@ class AlienInvasion:
         if self.alien_fleet.check_destroyed_status():
             self._reset_level()
 
-        
+
     def _reset_level(self)-> None:
         # This will reset level by creating new fleet
         self.ship.arsenal.arsenal.empty()
