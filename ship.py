@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
-    from aresnal import ShipArsenal
+    from arsenal import ShipArsenal
 
 
 class Ship:
@@ -22,11 +22,14 @@ class Ship:
                                             (self.settings.ship_w, self.settings.ship_h))
         
         self.rect = self.image.get_rect()
-        self.rect.midbottom = self.boundaries.midbottom
+        self._center_ship()
         self.moving_right = False
         self.moving_left = False
-        self.x = float(self.rect.x)
         self.arsenal = arsenal
+
+    def _center_ship(self):
+        self.rect.midbottom = self.boundaries.midbottom
+        self.x = float(self.rect.x)
 
 
     def update(self) -> None:
@@ -54,3 +57,9 @@ class Ship:
 
     def fire(self) -> bool:
         return self.arsenal.fire_bullet()
+    
+    def check_collisions(self, aliens) -> bool:
+        if pygame.sprite.spritecollideany(self, aliens):
+            self._center_ship()
+            return True
+        return False
