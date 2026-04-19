@@ -28,8 +28,14 @@ class Alien(Sprite):
 
     def update(self) -> None:
         temp_speed = self.settings.fleet_speed
-        self.x +=  temp_speed
+        if self.check_edges():
+            self.settings.fleet_direction *= -1
+            
+        self.x +=  temp_speed * self.settings.fleet_direction
         self.rect.x = self.x
+
+    def check_edges(self) -> bool:
+        return(self.rect.right >= self.bounaries.right or self.rect.left <= 0)
 
     def draw_alien(self) -> None:
         #Draw the alien on screen
