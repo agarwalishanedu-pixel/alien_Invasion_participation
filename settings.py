@@ -15,6 +15,7 @@ class Settings:
         self.ship_w = 40
         self.ship_h = 60
         self.ship_speed = 5
+        self.starting_ship_count = 3
 
         #Bullet image
         self.bullet_file = Path.cwd() / 'Assets' / 'images' / 'laserBlast.png'
@@ -23,7 +24,7 @@ class Settings:
         self.bullet_speed = 7
         self.bullet_w = 25
         self.bullet_h = 80
-        self.bullets_amount = 1000
+        self.bullets_amount = 5
 
         #Alien image
         self.alien_file = Path.cwd() / 'Assets' / 'images' / 'enemy_4.png'
