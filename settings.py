@@ -46,7 +46,7 @@ class Settings:
         self.ship_speed = 5
         self.starting_ship_count = 3
 
-        self.bullet_w = 250
+        self.bullet_w = 25
         self.bullet_h = 80
         self.bullet_speed = 7
         self.bullets_amount = 5

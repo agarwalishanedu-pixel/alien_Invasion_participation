@@ -8,8 +8,15 @@ if TYPE_CHECKING:
 #Volatile Game Stats
 
 class GameStats():
+    """
+    This class holds all of the different game statistic and is responsible for updating them and saving them to a file
+    """
 
     def __init__(self, game: 'AlienInvasion')-> None:
+        """
+        THis initializes the game stats and loads the saved score from the file
+        """
+        
         self.game = game
         self.settings = game.settings
         self.max_score = 0
@@ -28,6 +35,10 @@ class GameStats():
             #save the file
 
     def save_scores(self):
+        """
+        This saves the scores to a file
+        """
+
         scores = {
             'hi_score': self.hi_score
         }

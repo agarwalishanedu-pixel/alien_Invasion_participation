@@ -64,6 +64,9 @@ class AlienInvasion:
             self.clock.tick(self.settings.FPS)
 
     def _check_collisions(self):
+        """
+        This will check for the different collisions that can occur in the game and update the game state accordingly
+        """
         # Check for collisions for ship
         if self.ship.check_collisions(self.alien_fleet.fleet):
             self._check_game_status()
@@ -91,6 +94,10 @@ class AlienInvasion:
             self.HUD.update_level()
 
     def _check_game_status(self):
+        """
+        This checks the game status and updates the screen accordingly
+        """
+
         if self.game_stats.ships_left > 0:
             self.game_stats.ships_left -= 1
             self._reset_level()
@@ -101,12 +108,19 @@ class AlienInvasion:
         print(self.game_stats.ships_left)
 
     def _reset_level(self)-> None:
+        """
+        This resets the level by creating a new fleet and emptying the arsenal
+        """
         # This will reset level by creating new fleet
         self.ship.arsenal.arsenal.empty()
         self.alien_fleet.fleet.empty()
         self.alien_fleet.create_fleet()
 
     def restart_game(self):
+        """
+        This will restart the game and revert the settings to its initial state
+        """
+
         self.settings.initialize_dynamic_settings()
         # Reset game stats
         self.game_stats.reset_stats()
@@ -121,6 +135,10 @@ class AlienInvasion:
 
         
     def _update_screen(self):
+        """
+        This will update the screen
+        """
+        
         # This is adding the images in order
         # Background 
         self.screen.blit(self.bg, (0, 0))
@@ -137,7 +155,12 @@ class AlienInvasion:
 
         pygame.display.flip()
 
+
     def _check_events(self):
+        """
+        This checks for the different events that can occur in game
+        """
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
