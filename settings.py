@@ -40,7 +40,7 @@ class Settings:
         self.text_color = (255, 255, 255)
         self.button_font_size = 48
         self.HUD_font_size = 20
-        self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Silkscreen' / 'Silkscreen-Bold.ttf'\
+        self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Silkscreen' / 'Silkscreen-Bold.ttf'
         
     def initialize_dynamic_settings(self):
         self.ship_speed = 5
@@ -53,6 +53,7 @@ class Settings:
 
         self.fleet_speed = 4
         self.fleet_drop_speed = 15
+        self.alien_points = 50
             
     def increase_difficulty(self):
         self.ship_speed *= self.difficulty_scale

@@ -4,7 +4,6 @@ from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from alien_invasion import AlienInvasion
-    from arsenal import ShipArsenal
 
 class Button:
     """ 
@@ -47,5 +46,5 @@ class Button:
         """
         This method checks if the button has been clicked
         """
-        
+
         return self.rect.collidepoint(mouse_pos)
